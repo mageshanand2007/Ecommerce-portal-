@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop India - Tech & Gadgets</title>
+    <!-- CSS is linked here -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">E-Shop<span class="logo-accent">.in</span></div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Product Items</a>
+            <a href="#contact" class="hidden-mobile">Contact Us</a>
+            <a href="#about" class="hidden-mobile">About Us</a>
+            <button id="login-btn" onclick="openModal('login-modal')" class="primary-btn">Login</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="content-section welcome-banner">
+            <h1>Welcome to E-Shop India</h1>
+            <p>Your one-stop shop for high-quality electronics and gadgets, delivered nationwide!</p>
+        </section>
+
+        <section id="products" class="content-section">
+            <h2>Featured Products</h2>
+            
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <!-- Image 1: Smartphone -->
+                    <img src="https://iplanet.one/cdn/shop/files/iPhone_16_Pro_Desert_Titanium_PDP_Image_Position_1__en-IN_38a0c11d-1864-457e-a2e2-7333c0480a7b.jpg?v=1727249764" width="400" height="400">
+                    <h3>Super iphone 15 pro</h3>
+                    <p class="price">₹49,999</p>
+                    <button class="add-to-cart-btn primary-btn"><i class="fas fa-cart-plus mr-2"></i> Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <!-- Image 2: Headphones -->
+                    <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard1_ac192d39-3b63-4a80-a049-73e0a6c2b149.png?v=1728871112"width="400" height="400">
+                    <h3>Noise-Cancelling Headphones</h3>
+                    <p class="price">₹1,999</p>
+                    <button class="add-to-cart-btn primary-btn"><i class="fas fa-cart-plus mr-2"></i> Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <!-- Image 3: Backpack -->
+                    <img src="https://icon.in/cdn/shop/files/1_50b8664b-0c2b-477a-9d86-ed6fce060859.jpg?v=1756985540&width=1946"width="400" height="400">
+                    <h3>Travel Backpack Pro</h3>
+                    <p class="price">₹6,500</p>
+                    <button class="add-to-cart-btn primary-btn"><i class="fas fa-cart-plus mr-2"></i> Add to Cart</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="user-portal" class="content-section">
+            <h2>Your Account Dashboard</h2>
+            <div class="portal-grid">
+                
+                <div class="portal-item">
+                    <h3><i class="fas fa-box"></i> Orders List</h3>
+                    <ul id="orders-list">
+                        <li>Order #1001 - Delivered</li>
+                        <li>Order #1002 - Shipped</li>
+                    </ul>
+                </div>
+
+                <div class="portal-item">
+                    <h3><i class="fas fa-heart"></i> Wishlist</h3>
+                    <ul id="wishlist">
+                        <li>Item A - ₹1,999</li>
+                        <li>Item B - ₹3,999</li>
+                    </ul>
+                </div>
+
+                <div class="portal-item">
+                    <h3><i class="fas fa-comment-dots"></i> Reviews</h3>
+                    <textarea placeholder="Your feedback..." rows="4"></textarea>
+                    <button class="portal-btn secondary-btn">Submit Review</button>
+                </div>
+
+                <div class="portal-item">
+                    <h3><i class="fas fa-headset"></i> Customer Care</h3>
+                    <p>Need assistance? Reach out to us:</p>
+                    <a href="mailto:support@eshop.com" class="support-link"><i class="fas fa-envelope"></i> Email Support</a>
+                    <a href="#" class="support-link" onclick="openModal('report-modal')"><i class="fas fa-bug"></i> Report an Issue</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section contact-banner">
+            <h2>Contact Us</h2>
+            <p>Email: info@eshop.com | Phone: <span class="phone-number">+91 98765 43210</span></p>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>About Us</h2>
+            <p>E-Shop India has been serving customers since 2023 with a mission to deliver quality products and exceptional service across the country. We believe in providing the best value for your technology needs.</p>
+        </section>
+    </main>
+    
+    <!-- Login/Register Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('login-modal')">&times;</span>
+            
+            <!-- Login View -->
+            <div id="login-view">
+                <h3>Login</h3>
+                <form id="login-form" onsubmit="event.preventDefault(); validateForm('login');">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <p id="login-email-error" class="error-message"></p>
+                    <input type="password" id="login-password" placeholder="Password" required minlength="6">
+                    <p id="login-password-error" class="error-message"></p>
+                    <button type="submit" class="primary-btn">Log In</button>
+                    <p class="switch-form">Don't have an account? <a href="#" onclick="switchForm('register')">Register here</a></p>
+                </form>
+            </div>
+
+            <!-- Register View -->
+            <div id="register-view" style="display:none;">
+                <h3>Register</h3>
+                <form id="register-form" onsubmit="event.preventDefault(); validateForm('register');">
+                    <input type="text" id="reg-name" placeholder="Full Name" required>
+                    <p id="reg-name-error" class="error-message"></p>
+                    <input type="email" id="reg-email" placeholder="Email" required>
+                    <p id="reg-email-error" class="error-message"></p>
+                    <input type="password" id="reg-password" placeholder="Password (min 8 chars)" required minlength="8">
+                    <p id="reg-password-error" class="error-message"></p>
+                    <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
+                    <p id="reg-confirm-password-error" class="error-message"></p>
+                    <button type="submit" class="primary-btn">Register</button>
+                    <p class="switch-form">Already have an account? <a href="#" onclick="switchForm('login')">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="report-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('report-modal')">&times;</span>
+            <h3>Report an Issue</h3>
+            <p>Please describe the issue you are facing:</p>
+            <textarea rows="4"></textarea>
+            <button class="secondary-btn">Send Report</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 E-Shop Portal, India. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript is linked here -->
+    <script src="script.js"></script>
+</body>
+</html>

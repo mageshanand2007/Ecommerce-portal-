@@ -1,0 +1,212 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9f7ff; /* Bright, inviting background color */
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. Navigation Menu Styling */
+.navbar {
+    background-color: #007bff; /* Primary brand color (Blue) */
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffd700; /* Gold/Yellow for hover accent */
+}
+
+#login-btn {
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+#login-btn:hover {
+    background-color: #1e7e34;
+}
+
+/* Main Content Sections */
+.content-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+
+h1, h2, h3 {
+    color: #007bff;
+}
+
+/* Product Section Styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.5em;
+    color: #dc3545; /* Red for price emphasis */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.add-to-cart-btn {
+    background-color: #ffc107; /* Yellow/Orange button for action */
+    color: #333;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e0a800;
+}
+
+
+/* 3. Account Dashboard Styling */
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.portal-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-left: 5px solid #007bff; /* Blue accent bar */
+    border-radius: 6px;
+}
+
+.portal-item h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.portal-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.portal-item li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 0.95em;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.portal-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portal-btn:hover {
+    background-color: #1e7e34;
+}
+
+.support-link {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* 2. Modal (Login/Register) Styling - Simplified for brevity, same as previous version */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+.modal-content { background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); }
+.close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+.close-btn:hover, .close-btn:focus { color: #000; text-decoration: none; cursor: pointer; }
+
+.modal-content form input { width: 100%; padding: 10px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box; border-radius: 4px; }
+.modal-content form button { background-color: #007bff; color: white; padding: 10px 15px; margin: 10px 0; border: none; cursor: pointer; width: 100%; border-radius: 4px; }
+.modal-content form button:hover { background-color: #0056b3; }
+
+.switch-form { text-align: center; margin-top: 15px; font-size: 0.9em; }
+.switch-form a { color: #dc3545; text-decoration: none; }
+
+/* Validation Styling */
+.error-message { color: #dc3545; font-size: 0.8em; margin-top: -5px; margin-bottom: 10px; display: none; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #343a40; /* Darker footer */
+    color: white;
+    margin-top: 30px;
+}
